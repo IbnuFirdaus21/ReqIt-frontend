@@ -1,0 +1,563 @@
+/* --- RESET & GLOBAL STYLE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #fdfdfd; color: #333; overflow-x: hidden; }
+html { scroll-behavior: smooth; }
+
+/* --- TOMBOL (REBAK TOTAL) --- */
+/* Kode ini yang membuat tombol Kirim jadi seperti tombol Sign In di kanan */
+.btn-submit, .btn-confirm, .btn-hero, .btn-register {
+    background-color: #3F6F4E !important; /* Hijau Botani sesuai desain */
+    color: white !important;
+    padding: 12px 30px;
+    border: none !important;            /* Menghilangkan border kotak abu-abu */
+    border-radius: 50px;                 /* Membuat lengkungan bulat sempurna */
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(63, 111, 78, 0.2);
+}
+
+.btn-submit:hover, .btn-confirm:hover, .btn-hero:hover, .btn-register:hover {
+    background-color: #2D5239 !important; /* Hijau lebih gelap saat hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Tombol Batal agar tetap melengkung tapi warna netral */
+.btn-cancel {
+    background-color: #eee !important;
+    color: #555 !important;
+    padding: 12px 30px;
+    border: none !important;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    position: absolute;
+    top: 0; width: 100%;
+    padding: 25px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+.logo { color: white; font-weight: bold; font-size: 24px; flex: 0 0 100px; }
+.nav-menu { display: flex; list-style: none; gap: 30px; flex: 1; justify-content: center; }
+.nav-menu a { color: white; text-decoration: none; font-size: 14px; font-weight: 500; text-transform: uppercase; }
+.nav-auth { display: flex; align-items: center; gap: 20px; }
+.nav-menu-auth { display: none; }
+.hamburger { display: none; }
+.login-link { color: white; text-decoration: none; font-size: 13px; text-transform: uppercase; }
+
+/* --- HERO --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/img/hero.webp') center/cover;
+    display: flex; align-items: center; padding: 0 80px; color: white;
+}
+.hero-content h1 { font-size: 48px; line-height: 1.2; margin-bottom: 20px; }
+.hero-desc { max-width: 500px; margin-bottom: 30px; font-size: 14px; opacity: 0.9; }
+
+/* --- ABOUT --- */
+.about { background: #6f8f5e; color: white; padding: 60px 80px; }
+.about-content { max-width: 800px; }
+.about-content h2 { font-size: 40px; margin-bottom: 15px; }
+
+/* --- MENU SLIDER --- */
+.menu-section { padding: 60px 20px; text-align: center; }
+.menu-tabs { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; border-bottom: 1px solid #ddd; }
+.menu-tabs .active { color: #333; border-bottom: 3px solid #3f6f4e; padding-bottom: 10px; font-weight: bold; }
+
+.menu-container { display: flex; justify-content: center; margin: 40px 0; }
+.menu-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-width: 280px; }
+.menu-card img { width: 100%; height: 180px; object-fit: cover; }
+.card-info { padding: 20px; text-align: left; }
+.stars-trigger { color: #ccc; cursor: pointer; margin-top: 10px; font-size: 18px; }
+
+/* --- REQUEST & FEEDBACK --- */
+.request { padding: 45px; text-align: center; }
+.request-input-container { 
+    max-width: 500px; margin: 20px auto; display: flex;
+    border: 1px solid #ddd; border-radius: 50px; padding: 5px 20px; background: white;
+}
+.request-input-container input { flex: 1; border: none; padding: 10px; outline: none; }
+.btn-send { border: none; background: none; cursor: pointer; color: #3f6f4e; font-size: 20px; }
+
+.feedback {
+    background: linear-gradient(135deg, #f0f7e6 0%, #e8f5d0 100%);
+    padding: 60px 80px;
+}
+
+.feedback-container {
+    max-width: 560px;
+    background: white;
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 8px 30px rgba(63, 111, 78, 0.1);
+}
+
+.feedback-container h3 {
+    color: #2D6A4F;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.feedback-container .feedback-subtitle {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.feedback-container textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    border: 1.5px solid #e0ede6;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    resize: none;
+    height: 130px;
+    color: #333;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.feedback-container textarea:focus {
+    border-color: #636f3f;
+}
+
+/* --- FOOTER --- */
+.footer { background: #6f8f5e; color: white; padding: 60px 80px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.footer-col h4 { margin-bottom: 20px; font-size: 14px; }
+.footer-col a { display: block; color: white; text-decoration: none; font-size: 13px; margin-bottom: 10px; opacity: 0.8; }
+
+/* --- MODAL RATING --- */
+.modal {
+    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6);
+    display: none; align-items: center; justify-content: center; z-index: 2000;
+}
+.modal.show { display: flex; }
+.modal-box h4 {
+    color: #ffffff; /* Warna abu-abu gelap agar kontras */
+    display: block !important;
+    visibility: visible !important;
+}
+.modal-box textarea { width: 100%; height: 100px; padding: 15px; border: 1px solid #eee; border-radius: 15px; margin: 15px 0; background: #f9f9f9; }
+.modal-actions { display: flex; gap: 15px; margin-top: 10px; }
+.star-select { font-size: 30px; color: #ccc; margin: 15px 0; }
+.star-select span.active { color: #f1c40f; }
+
+/* --- CHATBOT --- */
+.chat-popup {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 450px;
+    height: 600px;
+    background-color: #BDC97B; /* Warna Hijau Zaitun sesuai gambar */
+    border-radius: 30px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    z-index: 9999;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.chat-popup.show { display: flex; }
+
+.chat-body-custom {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-bottom: 20px;
+}
+
+/* AVATAR & BUBBLE */
+.msg-row { display: flex; gap: 12px; align-items: flex-start; }
+.msg-row.user { justify-content: flex-end; }
+
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+.msg-content { max-width: 75%; }
+.msg-meta { font-size: 11px; color: #fff; margin-bottom: 5px; font-weight: 500; }
+.msg-meta span { opacity: 0.6; margin-left: 5px; font-weight: 400; }
+.text-right { text-align: right; }
+
+.msg-bubble {
+    background: white;
+    color: #555;
+    padding: 12px 18px;
+    border-radius: 20px;
+    border-top-left-radius: 5px; /* Khas desain chat */
+    font-size: 13.5px;
+    line-height: 1.5;
+}
+
+.msg-row.user .msg-bubble {
+    background: #E8F0D1; /* Warna bubble user agak terang */
+    border-radius: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 20px;
+}
+
+/* FOOTER INPUT PILL */
+.chat-footer-new {
+    padding: 10px 0;
+}
+
+.input-pill {
+    background: white;
+    padding: 8px 10px 8px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.input-pill input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+}
+
+.btn-send-green {
+    background: #3F6F4E;
+    color: white;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.btn-send-green:hover { background: #2D5239; }
+.arrow-up { font-size: 20px; font-weight: bold; }
+
+/* TOMBOL BULAT CHATBOT */
+.chat-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #bed68a;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1500;
+}
+
+.chat-toggle-btn img {
+    width: 35px;
+}
+
+/* CHATBOT POPUP */
+.chatbot-trigger {
+    position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+    border-radius: 50%; background: #bed68a; border: none; cursor: pointer; z-index: 999;
+}
+.chat-container { padding: 20px; height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+.chat-row { display: flex; gap: 10px; align-items: flex-start; }
+.chat-row.user { justify-content: flex-end; }
+.chat-bubble { padding: 10px 15px; border-radius: 15px; font-size: 13px; line-height: 1.4; max-width: 80%; }
+.chat-row.bot .chat-bubble { background: white; color: #333; }
+.chat-row.user .chat-bubble { background: white; color: #333; }
+.chat-bubble small { display: block; font-size: 10px; color: #888; margin-bottom: 4px; }
+.chat-input-area { background: white; padding: 15px; display: flex; align-items: center; gap: 10px; }
+.chat-input-area input { flex: 1; border: none; outline: none; font-size: 14px; }
+.btn-send-chat { background: #3f6f4e; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; }
+
+/* CHATBOT */
+.chat-toggle { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%; background: #bed68a; border: none; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.chat-toggle img { width: 35px; }
+.chat-container { 
+    position: fixed; bottom: 100px; right: 30px; width: 320px; 
+    background: #bed68a; border-radius: 20px; display: none; flex-direction: column; overflow: hidden;
+}
+.chat-container.show { display: flex; }
+.chat-body { padding: 15px; height: 300px; overflow-y: auto; }
+.msg { padding: 10px; border-radius: 10px; margin-bottom: 10px; font-size: 13px; }
+.msg.bot { background: white; align-self: flex-start; }
+.msg.user { background: #3f6f4e; color: white; align-self: flex-end; }
+.chat-footer { padding: 10px; background: white; display: flex; }
+.chat-footer input { flex: 1; border: none; outline: none; }
+/* ========================= */
+/* RESPONSIVE BREAKPOINT */
+/* ========================= */
+
+/* ---------- TABLET ---------- */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .hero {
+        padding: 0 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .menu-tabs {
+        gap: 20px;
+        font-size: 14px;
+    }
+
+    .footer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .chat-popup {
+        width: 380px;
+        height: 550px;
+    }
+}
+
+/* ========================= */
+/* FIX MOBILE LAYOUT (FINAL) */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR FIX */
+    .navbar {
+        padding: 15px 20px;
+        position: fixed;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(6px);
+    }
+
+    .logo {
+        font-size: 18px;
+        flex: none;
+    }
+
+    .nav-auth {
+        gap: 10px;
+    }
+
+    .login-link {
+        font-size: 12px;
+    }
+
+    .btn-register {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 75%;
+        height: 100vh;
+        background: rgba(30, 60, 40, 0.97);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 60px 40px;
+        gap: 28px;
+        z-index: 999;
+        transition: transform 0.3s ease;
+        transform: translateX(-100%);
+    }
+
+    .nav-menu.open {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-menu a {
+        font-size: 18px;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 4px;
+    }
+
+    .nav-menu-auth {
+        display: flex;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: white;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 998;
+    }
+
+    .nav-overlay.open {
+        display: block;
+    }
+
+    .nav-auth {
+        display: none;
+    }
+
+    .chat-popup {
+        width: calc(100vw - 24px) !important;
+        height: 70vh !important;
+        bottom: 12px !important;
+        right: 12px !important;
+        left: 12px !important;
+        border-radius: 20px !important;
+    }
+
+    .chat-toggle-btn {
+        bottom: 16px !important;
+        right: 16px !important;
+    }
+
+    .feedback {
+        padding: 40px 20px;
+    }
+
+    .feedback-container {
+        padding: 24px 20px;
+    }
+
+    /* HERO FIX */
+    .hero {
+        height: auto;
+        padding: 110px 20px 70px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+        line-height: 1.35;
+        margin-bottom: 15px;
+    }
+
+    .hero-desc {
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 0 auto 25px;
+        max-width: 320px;
+    }
+
+    .btn-hero {
+        padding: 10px 24px;
+        font-size: 13px;
+    }
+
+    /* ABOUT FIX */
+    .about {
+        padding: 50px 20px;
+    }
+
+    .about-content h2 {
+        font-size: 26px;
+        margin-bottom: 12px;
+    }
+
+    .about-content p {
+        font-size: 13px;
+        line-height: 1.7;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+.app-downloads {
+    margin-top: 15px; /* Memberi jarak dari ikon sosmed */
+    display: flex;
+    gap: 10px;        /* Jarak antar gambar */
+}
+
+.app-downloads img {
+    width: 22px;     /* Atur ukuran lebar gambar */
+    height: auto;     /* Menjaga proporsi gambar */
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.app-downloads img:hover {
+    transform: scale(1.05); /* Efek sedikit membesar saat disentuh mouse */
+}
+
+/* TYPING INDICATOR */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 12px 18px;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #555;
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes typing {
+    0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
