@@ -144,7 +144,14 @@ function Login_admin() {
 
                     {error && <p style={{ color: 'red', marginBottom: '10px' }}>{error}</p>}
 
-                    <a href="#" className="recover-link">Recover Password ?</a>
+                    <button
+                        type="button"
+                        className="recover-link"
+                        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                        onClick={() => setError('Fitur recover password belum tersedia')}
+                    >
+                        Recover Password ?
+                    </button>
 
                     <button type="submit" className="btn-login" disabled={loading}>
                         {loading ? 'Signing in...' : 'Sign in'}
