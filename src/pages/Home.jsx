@@ -322,6 +322,49 @@ function Home() {
                 <div className="about-content">
                     <h2>Apa itu ReqIt?</h2>
                     <p>ReqIt adalah sebuah platform digital berbasis website yang dirancang sebagai "Jembatan Komunikasi" interaktif antara penyelenggara program Makan Bergizi Gratis (Dapur MBG) dengan siswa sebagai penerima manfaat.</p>
+                    <p style={{ marginTop: '15px' }}>
+                        Melalui ReqIt, siswa dapat memantau menu harian secara transparan, mengajukan permintaan menu favorit,
+                        memberikan rating dan saran, serta mencantumkan preferensi maupun kondisi alergi mereka. Setiap masukan
+                        berupa teks bebas yang dikirim siswa diproses secara otomatis oleh sistem di balik layar, sehingga data
+                        yang diterima pihak Dapur MBG sudah lebih terstruktur dan mudah digunakan untuk perencanaan menu ke depannya.
+                    </p>
+                    <div className="about-features">
+                        <div className="about-feature-item">
+                            <span className="about-feature-icon">🍱</span>
+                            <div>
+                                <h5>Menu Harian</h5>
+                                <p>Pantau menu MBG hari ini secara real-time.</p>
+                            </div>
+                        </div>
+                        <div className="about-feature-item">
+                            <span className="about-feature-icon">📝</span>
+                            <div>
+                                <h5>Request Menu</h5>
+                                <p>Sampaikan permintaan menu favoritmu.</p>
+                            </div>
+                        </div>
+                        <div className="about-feature-item">
+                            <span className="about-feature-icon">⭐</span>
+                            <div>
+                                <h5>Rating &amp; Saran</h5>
+                                <p>Beri penilaian dan masukan atas menu yang disajikan.</p>
+                            </div>
+                        </div>
+                        <div className="about-feature-item">
+                            <span className="about-feature-icon">🤖</span>
+                            <div>
+                                <h5>Chatbot Yves</h5>
+                                <p>Tanya jawab seputar menu dan nutrisi MBG.</p>
+                            </div>
+                        </div>
+                        <div className="about-feature-item">
+                            <span className="about-feature-icon">⚠️</span>
+                            <div>
+                                <h5>Info Alergi</h5>
+                                <p>Cantumkan kondisi alergi agar tercatat oleh pihak dapur.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section className="menu-section" id="menu-section">
@@ -422,6 +465,13 @@ function Home() {
                         <a href="https://www.facebook.com/p/Badan-Gizi-Nasional-Republik-Indonesia-61572906507007/"><img src="assets/img/facebook.png" alt="" /></a>
                         <a href="https://www.tiktok.com/@badangizinasional.ri?is_from_webapp=1&sender_device=pc"><img src="assets/img/tik-tok.png" alt="" /></a>
                     </div>
+                </div>
+
+                <div className="footer-credits">
+                    <p>
+                        Kredit gambar: foto sampul dan foto menu digunakan untuk kebutuhan ilustrasi non-komersial dalam proyek akademik ini.
+                        Ilustrasi siswa pada halaman Login/Daftar dibuat oleh penulis menggunakan Canva.
+                    </p>
                 </div>
 
                 <div className="footer-copyright">

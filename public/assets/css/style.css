@@ -69,6 +69,47 @@ html { scroll-behavior: smooth; }
 .about-content { max-width: 800px; }
 .about-content h2 { font-size: 40px; margin-bottom: 15px; }
 
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-top: 35px;
+}
+.about-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.about-feature-icon {
+    font-size: 26px;
+    line-height: 1;
+}
+.about-feature-item h5 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+.about-feature-item p {
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.5;
+}
+
+.footer-credits {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 20px;
+    padding-top: 16px;
+}
+.footer-credits p {
+    font-size: 11px;
+    opacity: 0.7;
+    line-height: 1.6;
+    max-width: 700px;
+}
+.footer-copyright {
+    grid-column: 1 / -1;
+}
+
 /* --- MENU SLIDER --- */
 .menu-section { padding: 60px 20px; text-align: center; }
 .menu-tabs { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; border-bottom: 1px solid #ddd; }
