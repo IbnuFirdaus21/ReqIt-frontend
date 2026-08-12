@@ -330,39 +330,24 @@ function Home() {
                     </p>
                     <div className="about-features">
                         <div className="about-feature-item">
-                            <span className="about-feature-icon">🍱</span>
-                            <div>
-                                <h5>Menu Harian</h5>
-                                <p>Pantau menu MBG hari ini secara real-time.</p>
-                            </div>
+                            <h5>Menu Harian</h5>
+                            <p>Pantau menu MBG hari ini secara real-time.</p>
                         </div>
                         <div className="about-feature-item">
-                            <span className="about-feature-icon">📝</span>
-                            <div>
-                                <h5>Request Menu</h5>
-                                <p>Sampaikan permintaan menu favoritmu.</p>
-                            </div>
+                            <h5>Request Menu</h5>
+                            <p>Sampaikan permintaan menu favoritmu.</p>
                         </div>
                         <div className="about-feature-item">
-                            <span className="about-feature-icon">⭐</span>
-                            <div>
-                                <h5>Rating &amp; Saran</h5>
-                                <p>Beri penilaian dan masukan atas menu yang disajikan.</p>
-                            </div>
+                            <h5>Rating &amp; Saran</h5>
+                            <p>Beri penilaian dan masukan atas menu yang disajikan.</p>
                         </div>
                         <div className="about-feature-item">
-                            <span className="about-feature-icon">🤖</span>
-                            <div>
-                                <h5>Chatbot Yves</h5>
-                                <p>Tanya jawab seputar menu dan nutrisi MBG.</p>
-                            </div>
+                            <h5>Chatbot Yves</h5>
+                            <p>Tanya jawab seputar menu dan nutrisi MBG.</p>
                         </div>
                         <div className="about-feature-item">
-                            <span className="about-feature-icon">⚠️</span>
-                            <div>
-                                <h5>Info Alergi</h5>
-                                <p>Cantumkan kondisi alergi agar tercatat oleh pihak dapur.</p>
-                            </div>
+                            <h5>Info Alergi</h5>
+                            <p>Cantumkan kondisi alergi agar tercatat oleh pihak dapur.</p>
                         </div>
                     </div>
                 </div>
@@ -469,7 +454,9 @@ function Home() {
 
                 <div className="footer-credits">
                     <p>
-                        Kredit gambar: foto sampul dan foto menu digunakan untuk kebutuhan ilustrasi non-komersial dalam proyek akademik ini.
+                        Kredit gambar: foto sampul dan foto menu diambil dari{' '}
+                        <a href="https://afu.id/nasional/ahli-mbg-sah-secara-konstitusi-tapi-tata-kelola-harus-dibenahi" target="_blank" rel="noopener noreferrer">afu.id</a>,
+                        digunakan untuk kebutuhan ilustrasi non-komersial dalam proyek akademik ini.
                         Ilustrasi siswa pada halaman Login/Daftar dibuat oleh penulis menggunakan Canva.
                     </p>
                 </div>
