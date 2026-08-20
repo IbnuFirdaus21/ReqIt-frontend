@@ -401,6 +401,56 @@ const Admin = () => {
                                     </p>
                                 </div>
 
+                                <div style={{
+                                    background: 'white',
+                                    borderRadius: '16px',
+                                    padding: '20px',
+                                    textAlign: 'center',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                                    border: '1px solid #fdecea'
+                                }}>
+                                    <p style={{
+                                        fontSize: '36px',
+                                        fontWeight: '700',
+                                        color: '#c0392b',
+                                        margin: '0 0 6px'
+                                    }}>
+                                        {allergySummary.totalMedis ?? 0}
+                                    </p>
+                                    <p style={{
+                                        fontSize: '12px',
+                                        color: '#888',
+                                        margin: 0
+                                    }}>
+                                        Alergi Medis
+                                    </p>
+                                </div>
+
+                                <div style={{
+                                    background: 'white',
+                                    borderRadius: '16px',
+                                    padding: '20px',
+                                    textAlign: 'center',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                                    border: '1px solid #fff3e0'
+                                }}>
+                                    <p style={{
+                                        fontSize: '36px',
+                                        fontWeight: '700',
+                                        color: '#a15c00',
+                                        margin: '0 0 6px'
+                                    }}>
+                                        {allergySummary.totalPreferensi ?? 0}
+                                    </p>
+                                    <p style={{
+                                        fontSize: '12px',
+                                        color: '#888',
+                                        margin: 0
+                                    }}>
+                                        Preferensi (Tidak Suka)
+                                    </p>
+                                </div>
+
                                 {allergySummary.allergyStats?.slice(0, 5).map((item, index) => (
                                     <div key={index} style={{
                                         background: 'white',
@@ -537,6 +587,13 @@ const Admin = () => {
                                                     fontWeight: '600',
                                                     borderBottom: '1px solid #eee'
                                                 }}>Detail Alergi</th>
+                                                <th style={{
+                                                    padding: '12px 16px',
+                                                    textAlign: 'left',
+                                                    color: '#666',
+                                                    fontWeight: '600',
+                                                    borderBottom: '1px solid #eee'
+                                                }}>Jenis</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -576,6 +633,21 @@ const Admin = () => {
                                                         color: '#555'
                                                     }}>
                                                         {student.allergies_details}
+                                                    </td>
+                                                    <td style={{
+                                                        padding: '12px 16px'
+                                                    }}>
+                                                        <span style={{
+                                                            background: student.allergy_type === 'preferensi' ? '#fff3e0' : '#fdecea',
+                                                            color: student.allergy_type === 'preferensi' ? '#a15c00' : '#c0392b',
+                                                            padding: '3px 10px',
+                                                            borderRadius: '20px',
+                                                            fontSize: '12px',
+                                                            fontWeight: '500',
+                                                            whiteSpace: 'nowrap'
+                                                        }}>
+                                                            {student.allergy_type === 'preferensi' ? 'Preferensi' : 'Alergi Medis'}
+                                                        </span>
                                                     </td>
                                                 </tr>
                                             ))}

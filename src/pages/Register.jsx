@@ -14,6 +14,7 @@ function Register() {
         allergies: []
     });
     const [hasAllergy, setHasAllergy] = useState(false);
+    const [allergyType, setAllergyType] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -34,7 +35,9 @@ function Register() {
     };
 
     const handleAllergyChange = (e) => {
-        setHasAllergy(e.target.value === 'yes');
+        const isYes = e.target.value === 'yes';
+        setHasAllergy(isYes);
+        if (!isYes) setAllergyType('');
     };
 
     const handleAllergyInput = (e) => {
@@ -57,12 +60,19 @@ function Register() {
             return;
         }
 
+        if (hasAllergy && !allergyType) {
+            setError('Mohon pilih jenis alergi: reaksi medis atau sekadar tidak suka');
+            setLoading(false);
+            return;
+        }
+
         try {
             await registerUser({
                 email: formData.email,
                 nis: formData.nis,
                 password: formData.password,
                 hasAllergy: hasAllergy,
+                allergyType: hasAllergy ? allergyType : null,
                 allergiesDetails: formData.allergies.join(', ')
             });
             alert('Registrasi berhasil! Silakan login.');
@@ -171,14 +181,46 @@ function Register() {
                         </div>
 
                         {hasAllergy && (
-                            <div className="input-group">
-                                <input 
-                                    type="text" 
-                                    placeholder="Sebutkan alergi (pisahkan dengan koma, contoh: susu, telur, kacang)"
-                                    onChange={handleAllergyInput}
-                                />
-                                <small className="input-hint">Contoh: susu, telur, kacang tanah</small>
-                            </div>
+                            <>
+                                <div className="allergy-type-section">
+                                    <label className="allergy-label">Jenis alergi ini apa?</label>
+                                    <div className="radio-group">
+                                        <label className="radio-option">
+                                            <input
+                                                type="radio"
+                                                name="allergyType"
+                                                value="medis"
+                                                checked={allergyType === 'medis'}
+                                                onChange={(e) => setAllergyType(e.target.value)}
+                                            />
+                                            <span>Alergi (reaksi medis)</span>
+                                        </label>
+                                        <label className="radio-option">
+                                            <input
+                                                type="radio"
+                                                name="allergyType"
+                                                value="preferensi"
+                                                checked={allergyType === 'preferensi'}
+                                                onChange={(e) => setAllergyType(e.target.value)}
+                                            />
+                                            <span>Tidak suka (preferensi)</span>
+                                        </label>
+                                    </div>
+                                    <small className="input-hint">
+                                        Pilih "Alergi" kalau tubuhmu bereaksi (gatal, sesak, bengkak, dll).
+                                        Pilih "Tidak suka" kalau kamu cuma nggak suka rasanya walau aman dimakan.
+                                    </small>
+                                </div>
+
+                                <div className="input-group">
+                                    <input 
+                                        type="text" 
+                                        placeholder="Sebutkan alergi (pisahkan dengan koma, contoh: susu, telur, kacang)"
+                                        onChange={handleAllergyInput}
+                                    />
+                                    <small className="input-hint">Contoh: susu, telur, kacang tanah</small>
+                                </div>
+                            </>
                         )}
 
                         <button type="submit" className="btn-submit" disabled={loading}>
