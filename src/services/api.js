@@ -26,8 +26,8 @@ const get = async (endpoint) => {
 export const loginUser = (email, password) =>
     post('/api/auth/login', { email, password });
 
-export const registerUser = ({ email, nis, password, hasAllergy, allergiesDetails }) =>
-    post('/api/auth/register', { email, nis, password, hasAllergy, allergiesDetails });
+export const registerUser = ({ email, nis, password, hasAllergy, allergyType, allergiesDetails }) =>
+    post('/api/auth/register', { email, nis, password, hasAllergy, allergyType, allergiesDetails });
 
 // Menu
 export const fetchTodayMenu = () =>
